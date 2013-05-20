@@ -16,8 +16,8 @@ class Wishlist
   end
   
   def top(x=5)
-  	if x.class == Fixnum
-      items[0..x]
+    if x.class == Fixnum
+      items[0...x]
     else
       puts 'Please give me an integer'
     end
@@ -46,18 +46,18 @@ a_wrinkle_in_time = Item.new('A Wrinkle in Time', false, 'http://amzn.com/B004OA
 fight_club = Item.new('Fight Club', 12.99)
 books.add(a_wrinkle_in_time)
 books.add(fight_club)
-books.size
+puts books.size # => 2
 
 # as of now this gives:
 # #<Item:0x100e2fcb0>
 # #<Item:0x100e2fc60>
-puts books.top(2)
+puts "#{books.top(2)}"
 
-puts books.name # this gives nil
+puts books.name # this gives a blank line
 
 puts fight_club.name # this gives Fight Club
 
-puts a_wrinkle_in_time.url # this gives 5.89
+puts a_wrinkle_in_time.url # this gives the url properly
 
 
 
