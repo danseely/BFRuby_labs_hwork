@@ -48,6 +48,7 @@ books.add(a_wrinkle_in_time)
 books.add(fight_club)
 puts books.size # => 2
 
+puts "#{books.top('hello')}" # gives 'please give me an integer'
 puts "#{books.top(2)}" # gives items as blobs
 
 puts books.name # this gives Book List
