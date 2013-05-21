@@ -41,24 +41,17 @@ end
 
 # now use them
 
-books = Wishlist.new(books)
+books = Wishlist.new('Book List')
 a_wrinkle_in_time = Item.new('A Wrinkle in Time', false, 'http://amzn.com/B004OA64H0', 5.89)
 fight_club = Item.new('Fight Club', 12.99)
 books.add(a_wrinkle_in_time)
 books.add(fight_club)
 puts books.size # => 2
 
-# as of now this gives:
-# #<Item:0x100e2fcb0>
-# #<Item:0x100e2fc60>
-puts "#{books.top(2)}"
+puts "#{books.top(2)}" # gives items as blobs
 
-puts books.name # this gives a blank line
+puts books.name # this gives Book List
 
 puts fight_club.name # this gives Fight Club
 
 puts a_wrinkle_in_time.url # this gives the url properly
-
-
-
-
