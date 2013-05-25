@@ -8,11 +8,7 @@ class Refridgerator
   end
   
   def is_full?
-    if @drinks.count >= capacity
-      true
-    else
-      false
-    end
+    @drinks.count == capacity
   end
 
   def is_empty?
@@ -21,7 +17,6 @@ class Refridgerator
 
   def remove_drink(drink=nil)
     if @drinks == []
-      puts 'No drinks!'
     elsif drink == nil
       @drinks[0]
     else

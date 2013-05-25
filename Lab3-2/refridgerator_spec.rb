@@ -42,6 +42,7 @@ describe Refridgerator do
   it 'does not allow a drink to be removed if list is empty' do
     fridge = Refridgerator.new([])
     fridge.remove_drink
+    fridge.drinks.must_equal []
   end
 
   it 'does not allow drink to be added if full' do
