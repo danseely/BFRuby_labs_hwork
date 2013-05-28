@@ -17,12 +17,8 @@ class Wishlist
     @items << item
   end
 
-  def top(x=5)
-      if x.class == Fixnum
-        items[0...x]
-      else
-        puts 'Please give me an integer'
-      end
+  def top(x)
+    items[0...x]
   end
 
 end
