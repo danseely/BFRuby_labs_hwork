@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require_relative 'item'
 
+# Tests for Item class
+
 describe Item do
   it 'should have a name field' do
     i = Item.new(name: 'my_item')
@@ -33,9 +35,9 @@ describe Item do
   end
 
   it 'should be able to modify its price after creation' do
-    i = Item.new(name: 'my_item')
-    i.name = 'other_item'
-    i.name.must_equal 'other_item'
+    i = Item.new(name: 'my_item', price: 5.00)
+    i.price = 8.00
+    i.price.must_equal 8.00
   end
 
   it 'should be able to modify its sale status after creation' do
@@ -44,4 +46,28 @@ describe Item do
     i.sale.must_equal true
   end
 
+  it 'should be able to hold an array of Photo objs' do
+    pic1 = Photo.new('mypics.com/first')
+    pic2 = Photo.new('mypics.com/second')
+    pic3 = Photo.new('mypics.com/third')
+    i = Item.new(name: 'my_pics', photos: [pic1, pic2, pic3])
+    i.photos.must_equal [pic1, pic2, pic3]
+  end
+
+  it 'should be able to add and remove photos by url' do
+    pic1 = Photo.new('mypics.com/first')
+    pic2 = Photo.new('mypics.com/second')
+    pic3 = Photo.new('mypics.com/third')
+    i = Item.new(name: 'my_pics', photos: [pic1, pic2])
+    i.photos << pic3
+    i.photos.must_equal [pic1, pic2, pic3]
+    i.remove_photo('mypics.com/first')
+    i.photos.must_equal [pic2, pic3]
+  end
+
 end
+
+
+
+
+
