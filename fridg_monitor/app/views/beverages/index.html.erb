@@ -1,0 +1,17 @@
+<h1>My Drinks:</h1>
+
+<ul>
+
+  <%@fridg.drinks.each do |item| %>
+    <li><%= item.name%></li>
+  <% end %>
+
+
+
+</ul>
+
+<hr />
+
+<%@fridg.drinks.each do |item| %>
+  <% if item.name == 'Bud' %>(Not a fan of <%= item.name%>)<% end %>
+<% end %>
